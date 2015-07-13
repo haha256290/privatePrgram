@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd"
+	default-lazy-init="true">
+
+	<bean id="cacheManager"
+		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation">
+			<value>ehcache.xml</value>
+		</property>
+	</bean>
+
+	<bean id="methodCache"
+		class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager">
+			<ref local="cacheManager" />
+		</property>
+	</bean>
+
+	<bean id="cacheService" class="com.csc.search.ehcache.imp.CacheServiceImp">
+		<property name="cache">
+			<ref local="methodCache" />
+		</property>
+	</bean>
+	
+	<bean id="useEhcache" class="com.csc.search.useService.imp.UseEhcache">
+		<property name="cacheService">
+			<ref local="cacheService" />
+		</property>
+		<property name="pathBean">
+			<ref local="pathBean" />
+		</property>
+	</bean>
+	 <!-- 
+	<bean id="useEhcache" class="com.csc.search.useService.imp.NotUseCache">
+	<property name="pathBean">
+			<ref local="pathBean" />
+		</property>
+	</bean>
+	 -->
+	<bean id="pathBean" class="com.csc.search.dto.PathBean">
+		<property name="path">
+			<value>/product.csv</value>
+		</property>
+	</bean>
+	
+</beans>

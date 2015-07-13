@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ehcacheJars"/>
+	<classpathentry kind="lib" path="lib/opencsv-2.3.jar"/>
+	<classpathentry kind="lib" path="lib/asm-1.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/cglib-2.1_3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/spring-2.0.6.jar"/>
+	<classpathentry kind="lib" path="D:/开源项目/ehcache-2.10.0/lib/ehcache-2.10.0.jar" sourcepath="D:/开源项目/ehcache-2.10.0/ehcache-2.10.0.src.zip"/>
+	<classpathentry kind="lib" path="D:/开源项目/ehcache-2.10.0/lib/slf4j-api-1.7.7.jar"/>
+	<classpathentry kind="lib" path="D:/开源项目/ehcache-2.10.0/lib/slf4j-jdk14-1.7.7.jar"/>
+	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.hibernate_3.3"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
